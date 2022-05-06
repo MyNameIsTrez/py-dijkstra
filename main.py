@@ -18,8 +18,8 @@ def showcase_cyclic():
 
 	dijkstra = Dijkstra(cyclic_graph)
 
-	print(dijkstra.run("a", "a")) # ['a']
-	print(dijkstra.run("a", "b")) # ['a', 'y', 'w', 'b']
+	assert dijkstra.get_shortest_path("a", "a") == ['a']
+	assert dijkstra.get_shortest_path("a", "b") == ['a', 'y', 'w', 'b']
 
 
 def showcase_acyclic():
@@ -33,8 +33,8 @@ def showcase_acyclic():
 
 	dijkstra = Dijkstra(acyclic_graph)
 
-	print(dijkstra.run("a", "a")) # ['a']
-	print(dijkstra.run("a", "e")) # ['a', 'b', 'd', 'e']
+	assert dijkstra.get_shortest_path("a", "a") == ['a']
+	assert dijkstra.get_shortest_path("a", "e") == ['a', 'b', 'd', 'e']
 
 
 class Dijkstra:
@@ -42,7 +42,7 @@ class Dijkstra:
 		self.graph = graph
 
 
-	def run(self, start, end):
+	def get_shortest_path(self, start, end):
 		distances = { key: float("inf") for key in self.graph.keys() }
 		distances[start] = 0
 
