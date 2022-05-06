@@ -1,7 +1,9 @@
 # py-dijkstra
 
-A Python class for the Dijkstra pathfinding algorithm.
+My Python class for the Dijkstra pathfinding algorithm.
 
-It returns the shortest path.
+## Features
 
-It handles both acyclic and cyclic graphs.
+* Returns the shortest path.
+
+* Handles both acyclic and cyclic graphs.
